@@ -1,0 +1,28 @@
+h1 {
+    text-align: center;
+}
+
+body {
+    background-color: rgb(57, 169, 219);
+    font-family: Rubik, Arial;
+}
+
+table {
+    margin: 20px auto;
+    width: 60%;
+    text-align: center;
+    border: 1px solid black;
+}
+
+thead th {
+    background: #88CCF1;
+    color: #FFF;
+    font-size: 20px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+}
