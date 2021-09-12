@@ -1,0 +1,38 @@
+button {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+    border-radius: 40%;
+    background: yellow;
+}
+
+button:hover {
+    background: blue;
+}
+
+button:focus {
+    background: red;
+}
+
+img {
+    height: 40px;
+    width: 40px;
+    border-radius: 40%;
+}
+
+body {
+    background-color: rgb(36, 172, 24);
+    font-family: Rubik, Arial;
+}
+
+.vl {
+    border-left: 6px solid black;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+    top: 120px;
+}
