@@ -18,8 +18,10 @@ import { HeaderComponent } from './header/header.component';
 import { UsersService } from './clean-nav/login/users.service';
 import { AppRoutingModule } from './app-routing.module';
 import { CleanNavComponent } from './clean-nav/clean-nav.component';
-import { MoviesListComponent } from './movies-list/movies-list.component';
 import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
+import { MovieDetailsComponent } from './movies-list/movie-details/movie-details.component';
+import { MovieItemComponent } from './movies-list/movie-item/movie-item.component';
+import { MoviesListComponent } from './movies-list/movies-list.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.compo
     CleanNavComponent,
     MoviesListComponent,
     LoadingSpinnerComponent,
+    MovieItemComponent,
+    MovieDetailsComponent
   ],
   imports: [
     BrowserModule,
