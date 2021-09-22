@@ -18,9 +18,18 @@ import { HeaderComponent } from './header/header.component';
 import { UsersService } from './clean-nav/login/users.service';
 import { AppRoutingModule } from './app-routing.module';
 import { CleanNavComponent } from './clean-nav/clean-nav.component';
+import { MoviesListComponent } from './movies-list/movies-list.component';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, HeaderComponent, CleanNavComponent],
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    HeaderComponent,
+    CleanNavComponent,
+    MoviesListComponent,
+    LoadingSpinnerComponent,
+  ],
   imports: [
     BrowserModule,
     FormsModule,

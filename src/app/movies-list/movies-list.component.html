@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="absolute-center">
+    <div class="alert alert-danger" *ngIf="error != null">
+      <h2>An error occurred!</h2>
+      <p>{{ error }}</p>
+    </div>
+
+    <div class="col-xs-12 col-md-6 offset-md-3">
+      <div *ngIf="isLoading" style="text-align: center">
+        <app-loading-spinner></app-loading-spinner>
+      </div>
+
+      <span *ngIf="loadedMovies.length < 1 && !isLoading"
+        ><strong>Oops, no movies available!</strong> <br> <strong>Sign in or Check connection</strong></span
+      >
+    </div>
+  </div>
+</div>
+
+<mat-paginator
+  [length]="length"
+  [pageSize]="pageSize"
+  (page)="onPageFlip($event)"
+  aria-label="Select page"
+  *ngIf="loadedMovies.length > 1 && !isLoading"
+>
+</mat-paginator>
