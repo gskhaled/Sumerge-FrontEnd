@@ -1,0 +1,34 @@
+<div class="card-wrapper card">
+  <mat-card class="example-card">
+    <div class="absolute-center">
+      <mat-card-header>
+        <mat-card-title>{{ movie.title }}</mat-card-title>
+        <mat-card-subtitle>
+          {{ movie.release_date }}
+        </mat-card-subtitle>
+      </mat-card-header>
+    </div>
+    <mat-card-content>
+      <div class="absolute-center">
+        <img
+          style="max-height: 200px"
+          [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
+          alt="{{ movie.title }}"
+          class="img-responsive"
+        />
+      </div>
+      <hr />
+      <p><strong>Overview: </strong>{{ movie.overview }}</p>
+      <p><strong>Released on: </strong>{{ movie.release_date }}</p>
+      <p><strong>Popularity: </strong>{{ movie.popularity }}</p>
+      <p>
+        <strong>Vote average: </strong>{{ movie.vote_average
+        }} & <strong>Vote count: </strong>{{ movie.vote_count }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<div mat-dialog-actions class="absolute-center">
+  <button mat-button (click)="onNoClick()">Okay</button>
+</div>
