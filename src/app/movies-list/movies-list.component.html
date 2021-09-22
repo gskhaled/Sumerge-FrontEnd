@@ -11,16 +11,9 @@
       </div>
 
       <span *ngIf="loadedMovies.length < 1 && !isLoading"
-        ><strong>Oops, no movies available!</strong> <br> <strong>Sign in or Check connection</strong></span
+        ><strong>Oops, no movies available!</strong> <br />
+        <strong>Sign in or Check connection</strong></span
       >
-
-      <!-- <ul class="list-group" *ngIf="loadedMovies.length >= 1 && !isLoading">
-      <li class="list-group-item" *ngFor="let movie of loadedMovies">
-        <h3 (click)="onMovieSelected(movie)">{{ movie["title"] }}</h3>
-        <p>{{ movie["overview"] }}</p>
-        <app-movie-item (movie)="(movie)"></app-movie-details>
-      </li>
-    </ul> -->
     </div>
   </div>
   <div class="row">
@@ -36,6 +29,6 @@
   [pageSize]="pageSize"
   (page)="onPageFlip($event)"
   aria-label="Select page"
-  *ngIf="loadedMovies.length > 1 && !isLoading"
+  *ngIf="!isFirstTime"
 >
 </mat-paginator>

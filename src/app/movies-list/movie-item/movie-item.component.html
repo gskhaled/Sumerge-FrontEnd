@@ -23,13 +23,6 @@
             : movie.overview
         }}
       </p>
-      <!-- <p [@bodyExpansion]="state" class="expandable-content">
-        {{
-          movie.overview.length > 300
-            ? movie.overview.substring(300)
-            : ''
-        }}
-      </p> -->
     </mat-card-content>
     <mat-card-actions>
       <button mat-raised-button color="accent" (click)="openDialog()">
@@ -38,18 +31,3 @@
     </mat-card-actions>
   </mat-card>
 </div>
-
-<!-- <a class="list-group-item clearfix" (click)="onSelected()">
-  <div class="pull-left">
-    <h4 class="list-group-item-heading">{{ movie.title }}</h4>
-    <p class="list-group-item-text">{{ movie.overview }}</p>
-  </div>
-  <span class="pull-right">
-    <img
-      style="max-height: 50px"
-      [src]="'http://image.tmdb.org/t/p/w500/' + movie.poster_path"
-      alt="{{ movie.title }}"
-      class="img-responsive"
-    />
-  </span>
-</a> -->

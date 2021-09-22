@@ -17,12 +17,16 @@ export class MoviesListComponent implements OnInit {
   currentPage = 1;
 
   loadedMovies: Movie[] = [];
+  isFirstTime = true;
   isLoading = false;
   error!: Subject<string>;
   constructor(private http: HttpClient, private usersService: UsersService) {}
 
   ngOnInit() {
     if (this.usersService.signedInUser) {
+      if (this.isFirstTime) {
+        this.isFirstTime = false;
+      }
       this.isLoading = true;
       this.http
         .get<Movie>('https://api.themoviedb.org/3/movie/top_rated', {
