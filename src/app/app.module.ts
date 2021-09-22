@@ -1,16 +1,45 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { LoginComponent } from './clean-nav/login/login.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { DemoMaterialModule } from './material-module';
+import { HttpClientModule } from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { UsersService } from './clean-nav/login/users.service';
+import { AppRoutingModule } from './app-routing.module';
+import { CleanNavComponent } from './clean-nav/clean-nav.component';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, LoginComponent, HeaderComponent, CleanNavComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatNativeDateModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    DemoMaterialModule,
+    MatCardModule,
+    MatButtonModule,
+    MatNativeDateModule,
+    DemoMaterialModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [UsersService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
