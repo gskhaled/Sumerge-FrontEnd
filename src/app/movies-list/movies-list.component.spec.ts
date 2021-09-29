@@ -1,8 +1,8 @@
 import { HttpClientModule } from '@angular/common/http';
 import { fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { MatPaginatorModule } from '@angular/material/paginator';
-import { User, UsersService } from '../clean-nav/login/users.service';
-import { LoadingSpinnerComponent } from '../loading-spinner/loading-spinner.component';
+import { User, UsersService } from '../services/users.service';
+import { LoadingSpinnerComponent } from './loading-spinner/loading-spinner.component';
 import { MoviesListComponent } from './movies-list.component';
 
 describe('Component: MoviesList', () => {

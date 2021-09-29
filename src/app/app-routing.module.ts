@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CleanNavComponent } from './clean-nav/clean-nav.component';
+import { FormSwitcherComponent } from './form-switcher/form-switcher.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
+import { AuthGuard } from './services/auth.guard';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
-  { path: 'login', component: CleanNavComponent },
-  { path: 'moviesList', component: MoviesListComponent },
+  { path: 'login', component: FormSwitcherComponent },
+  {
+    path: 'moviesList',
+    canActivate: [AuthGuard],
+    component: MoviesListComponent,
+  },
+  { path: '**', redirectTo: ''},
 ];
 
 @NgModule({

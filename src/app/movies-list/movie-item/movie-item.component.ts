@@ -18,6 +18,7 @@ export class MovieItemComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(MovieDetailsComponent, {
       width: '75%',
+      maxHeight: 500,
       data: { movie: this.movie },
     });
   }

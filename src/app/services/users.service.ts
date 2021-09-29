@@ -1,5 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Subject } from 'rxjs';
 
 export class User {
   constructor(public email: string, public password: string) {}
@@ -15,6 +16,8 @@ const users = [
 export class UsersService {
   userSubscription = new Subject<User>();
   signedInUser!: User;
+
+  constructor(private http: HttpClient) {}
 
   signInUser(email: string, password: string): User {
     if (

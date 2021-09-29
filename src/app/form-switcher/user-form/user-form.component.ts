@@ -1,14 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UsersService } from './users.service';
+import { UsersService } from '../../services/users.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  selector: 'app-user-form',
+  templateUrl: './user-form.component.html',
+  styleUrls: ['./user-form.component.css'],
 })
-export class LoginComponent implements OnInit {
+export class UserFormComponent implements OnInit {
   @Input() isLogin = true;
   hide = true;
   error = false;
@@ -20,10 +20,12 @@ export class LoginComponent implements OnInit {
       let email = loginForm.form.value['email'];
       let password = loginForm.form.value['password'];
       this.usersService.signInUser(email, password);
+      console.log(this.usersService.signedInUser)
       if (!this.usersService.signedInUser) {
         this.error = true;
       } else {
-        this.router.navigate(['/moviesList']);
+        console.log('navigating...')
+        this.router.navigateByUrl('/moviesList'); 
       }
     } else {
       // means we are signing up

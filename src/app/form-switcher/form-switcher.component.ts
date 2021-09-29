@@ -1,13 +1,13 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { UsersService } from './login/users.service';
+import { UsersService } from '../services/users.service';
 
 @Component({
-  selector: 'app-clean-nav',
-  templateUrl: 'clean-nav.component.html',
-  styleUrls: ['clean-nav.component.css'],
+  selector: 'app-form-switcher',
+  templateUrl: 'form-switcher.component.html',
+  styleUrls: ['form-switcher.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
-export class CleanNavComponent {
+export class FormSwitcherComponent {
   isLoggedIn = false;
   constructor(private usersService: UsersService) {}
 

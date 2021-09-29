@@ -2,7 +2,7 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Subject } from 'rxjs';
-import { UsersService } from '../clean-nav/login/users.service';
+import { UsersService } from '../services/users.service';
 import { Movie } from './movie.model';
 
 @Component({
@@ -20,30 +20,28 @@ export class MoviesListComponent implements OnInit {
   isFirstTime = true;
   isLoading = false;
   error!: Subject<string>;
-  constructor(private http: HttpClient, private usersService: UsersService) {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    if (this.usersService.signedInUser) {
-      if (this.isFirstTime) {
-        this.isFirstTime = false;
-      }
-      this.isLoading = true;
-      this.http
-        .get<Movie>('https://api.themoviedb.org/3/movie/top_rated', {
-          params: new HttpParams()
-            .set('api_key', 'a8bd7f3d0cff0c86e330f635ea81ce95')
-            .set('page', this.currentPage),
-        })
-        .subscribe(
-          (response) => {
-            this.loadedMovies = response['results'];
-            this.isLoading = false;
-          },
-          (error) => {
-            this.error = error;
-          }
-        );
+    if (this.isFirstTime) {
+      this.isFirstTime = false;
     }
+    this.isLoading = true;
+    this.http
+      .get<Movie>('https://api.themoviedb.org/3/movie/top_rated', {
+        params: new HttpParams()
+          .set('api_key', 'a8bd7f3d0cff0c86e330f635ea81ce95')
+          .set('page', this.currentPage),
+      })
+      .subscribe(
+        (response) => {
+          this.loadedMovies = response['results'];
+          this.isLoading = false;
+        },
+        (error) => {
+          this.error = error;
+        }
+      );
   }
 
   onPageFlip(pageEvent: PageEvent) {
