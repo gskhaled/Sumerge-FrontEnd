@@ -5,8 +5,9 @@ import { Movie } from '../movies-list/movie.model';
 @Injectable()
 export class MoviesService {
   constructor(private http: HttpClient) {}
+
   loadMovies(page: number) {
-    return this.http.get<Movie>(
+    return this.http.get(
       'https://api.themoviedb.org/3/movie/top_rated',
       {
         params: new HttpParams()

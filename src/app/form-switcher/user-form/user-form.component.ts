@@ -20,12 +20,10 @@ export class UserFormComponent implements OnInit {
       let email = loginForm.form.value['email'];
       let password = loginForm.form.value['password'];
       this.usersService.signInUser(email, password);
-      console.log(this.usersService.signedInUser)
       if (!this.usersService.signedInUser) {
         this.error = true;
       } else {
-        console.log('navigating...')
-        this.router.navigateByUrl('/moviesList'); 
+        this.router.navigate(['/moviesList']);
       }
     } else {
       // means we are signing up
@@ -33,8 +31,9 @@ export class UserFormComponent implements OnInit {
       let password = loginForm.form.value['password'];
       this.error = this.usersService.signUpUser(email, password);
     }
-    if (!this.error) loginForm.reset();
-    else {
+    if (!this.error) {
+      loginForm.reset();
+    } else {
       setInterval(() => {
         this.error = false;
       }, 2000);

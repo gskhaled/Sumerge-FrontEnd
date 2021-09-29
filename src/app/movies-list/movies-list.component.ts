@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Subject } from 'rxjs';
 import { MoviesService } from '../services/movies.service';
@@ -29,6 +29,7 @@ export class MoviesListComponent implements OnInit {
     this.moviesService.loadMovies(this.currentPage).subscribe(
       (response) => {
         this.loadedMovies = response['results'];
+        // console.log('Loaded movies now is: ' + this.loadedMovies);
         this.isLoading = false;
       },
       (error) => {
