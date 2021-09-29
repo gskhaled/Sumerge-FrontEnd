@@ -10,15 +10,24 @@
   clear: both;
 }
 
-/* Float four columns side by side */
+/* Float two columns side by side */
 app-movie-item {
   float: left;
-  width: 50%;
+  width: 33%;
   padding: 0 10px;
 }
 
 /* Responsive columns */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 1000px) {
+  app-movie-item {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Responsive columns */
+@media screen and (max-width: 700px) {
   app-movie-item {
     width: 100%;
     display: block;

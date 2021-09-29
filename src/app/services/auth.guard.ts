@@ -19,7 +19,7 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean | UrlTree {
-    console.log('Hiiii in auth guard');
+    // console.log('Hiiii in auth guard');
     if (this.userService.signedInUser) {
       return true;
     } else {

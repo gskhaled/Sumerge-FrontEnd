@@ -22,6 +22,7 @@ import { LoadingSpinnerComponent } from './movies-list/loading-spinner/loading-s
 import { MovieDetailsComponent } from './movies-list/movie-details/movie-details.component';
 import { MovieItemComponent } from './movies-list/movie-item/movie-item.component';
 import { MoviesListComponent } from './movies-list/movies-list.component';
+import { MoviesService } from './services/movies.service';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,7 @@ import { MoviesListComponent } from './movies-list/movies-list.component';
     MatNativeDateModule,
     DemoMaterialModule,
   ],
-  providers: [UsersService],
+  providers: [UsersService, MoviesService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
