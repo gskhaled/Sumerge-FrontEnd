@@ -3,7 +3,7 @@ import { fakeAsync, TestBed, tick, waitForAsync } from '@angular/core/testing';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { of } from 'rxjs';
 import { MoviesService } from '../services/movies.service';
-import { Movie } from './movie.model';
+import { Movie } from '../models/movie.model';
 import { MoviesListComponent } from './movies-list.component';
 
 describe('Component: MoviesList', () => {

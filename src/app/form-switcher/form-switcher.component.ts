@@ -15,9 +15,10 @@ export class FormSwitcherComponent {
     this.usersService.userSubscription.subscribe((user) => {
       this.isLoggedIn = !!user;
     });
+    // this.isLoggedIn = !!this.usersService.signedInUser;
   }
 
-  ngOnDestroy() {
-    this.usersService.userSubscription.unsubscribe();
-  }
+  // ngOnDestroy() {
+  //   this.usersService.userSubscription.unsubscribe();
+  // }
 }

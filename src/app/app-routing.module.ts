@@ -5,14 +5,14 @@ import { MoviesListComponent } from './movies-list/movies-list.component';
 import { AuthGuard } from './services/auth.guard';
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/moviesList', pathMatch: 'full' },
   { path: 'login', component: FormSwitcherComponent },
   {
     path: 'moviesList',
     canActivate: [AuthGuard],
     component: MoviesListComponent,
   },
-  { path: '**', redirectTo: ''},
+  { path: '**', redirectTo: '/moviesList'},
 ];
 
 @NgModule({

@@ -14,16 +14,23 @@ const users = [
 
 @Injectable()
 export class UsersService {
-  userSubscription = new Subject<User>();
+  userSubscription = new BehaviorSubject<User>(null!);
   signedInUser!: User;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    let userJSON = localStorage.getItem('userData');
+    if (userJSON != null) {
+      this.signedInUser = JSON.parse(userJSON);
+      this.userSubscription.next(this.signedInUser);
+    }
+  }
 
   signInUser(email: string, password: string): User {
     if (
       users.some((user) => user.email == email && user.password == password)
     ) {
       this.signedInUser = new User(email, password);
+      localStorage.setItem('userData', JSON.stringify(this.signedInUser));
       this.userSubscription.next(this.signedInUser);
     }
     return this.signedInUser;
@@ -39,5 +46,11 @@ export class UsersService {
       });
       return false;
     }
+  }
+
+  logout() {
+    localStorage.removeItem('userData');
+    this.signedInUser = <User>{};
+    this.userSubscription.next(null!);
   }
 }

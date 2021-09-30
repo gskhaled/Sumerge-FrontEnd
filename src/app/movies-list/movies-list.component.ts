@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
 import { Subject } from 'rxjs';
 import { MoviesService } from '../services/movies.service';
-import { Movie } from './movie.model';
+import { Movie } from '../models/movie.model';
 
 @Component({
   selector: 'app-movies-list',

@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
-import { Movie } from '../movie.model';
+import { Movie } from '../../models/movie.model';
 
 @Component({
   selector: 'app-movie-item',

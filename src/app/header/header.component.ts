@@ -5,7 +5,7 @@ import { UsersService } from '../services/users.service';
   selector: 'app-header',
   templateUrl: './header.component.html',
 })
-export class HeaderComponent implements OnInit, OnDestroy {
+export class HeaderComponent implements OnInit {
   isLoggedIn = false;
   constructor(private usersService: UsersService) {}
 
@@ -13,9 +13,15 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.usersService.userSubscription.subscribe((user) => {
       this.isLoggedIn = !!user;
     });
+    // this.isLoggedIn = !!this.usersService.signedInUser
   }
 
-  ngOnDestroy() {
-    this.usersService.userSubscription.unsubscribe();
+  // ngOnDestroy() {
+  //   this.usersService.userSubscription.unsubscribe();
+  // }
+
+  logout() {
+    console.log('Logginggggg outtttt....')
+    this.usersService.logout();
   }
 }

@@ -1,4 +1,3 @@
-import { CdkTreeNodeOutletContext } from '@angular/cdk/tree';
 import { Injectable } from '@angular/core';
 import {
   ActivatedRouteSnapshot,
@@ -7,8 +6,6 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
 import { UsersService } from './users.service';
 
 @Injectable({ providedIn: 'root' })
@@ -19,7 +16,6 @@ export class AuthGuard implements CanActivate {
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): boolean | UrlTree {
-    // console.log('Hiiii in auth guard');
     if (this.userService.signedInUser) {
       return true;
     } else {
